@@ -12,6 +12,8 @@ final class AFNetworking {
     let session: Session
     
     required init(allHostsMustBeEvaluated: Bool) {
-        session = Session.init(interceptor: RequestInterceptor(), eventMonitors: [AlamofireLogger()])
+        // TODO: 
+        //session = Session.init(interceptor: RequestInterceptor(), eventMonitors: [AlamofireLogger()])
+        session = Session.init(eventMonitors: [AlamofireLogger()])
     }
 }
