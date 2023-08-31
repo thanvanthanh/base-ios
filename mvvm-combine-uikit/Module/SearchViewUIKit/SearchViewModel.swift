@@ -18,6 +18,7 @@ class SearchViewModel: BaseViewModel {
 
 extension SearchViewModel: ViewModelType {
     struct Input {
+        let loadTrigger: AnyPublisher<Void, Never>
         let searchTrigger: AnyPublisher<String, Never>
         let selectUserTrigger: AnyPublisher<IndexPath, Never>
     }
@@ -30,12 +31,24 @@ extension SearchViewModel: ViewModelType {
     
     func transform(_ input: Input, _ disposeBag: DisposeBag) -> Output {
         let output = Output()
+        
+        input.loadTrigger
+            .flatMap {
+                self.getSearchData
+                    .search(username: "thanvanthanh")
+                    .trackError(self.errorIndicator)
+                    .trackActivity(self.activityIndicator)
+                    .eraseToAnyPublisher()
+            }
+            .assign(to: \.response, on: output)
+            .store(in: disposeBag)
+        
         input.searchTrigger
             .flatMap {
                 self.getSearchData
                     .search(username: $0)
-                    .trackActivity(self.activityIndicator)
                     .trackError(self.errorIndicator)
+                    .trackActivity(self.activityIndicator)
                     .eraseToAnyPublisher()
             }
             .assign(to: \.response, on: output)
@@ -47,11 +60,6 @@ extension SearchViewModel: ViewModelType {
                 DetailViewCoordinator.shared.start(data: user)
             }
             .store(in: disposeBag)
-        
-//        activityTracker
-//            .assign(to: \.isLoading, on: output)
-//            .store(in: disposeBag)
-        
         
         return output
     }

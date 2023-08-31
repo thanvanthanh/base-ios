@@ -29,6 +29,7 @@ final class SearchViewController: BaseViewController {
     
     override func setupUI() {
         super.setupUI()
+        title = "Search"
         setupTableView()
     }
     
@@ -43,6 +44,7 @@ final class SearchViewController: BaseViewController {
         guard let viewmodel = viewModel as? SearchViewModel else { return }
         
         let input = SearchViewModel.Input(
+            loadTrigger: Just(()).eraseToAnyPublisher(),
             searchTrigger: searchTrigger
                 .throttle(for: 1, scheduler: RunLoop.main, latest: true)
                 .eraseToAnyPublisher(),
@@ -61,14 +63,6 @@ extension SearchViewController {
             self.data = repos
         }
     }
-    
-//    private var loadingSubscriber: Binder<Bool> {
-//        Binder(self) { vc, isLoading in
-//            DispatchQueue.main.async {
-//                self.handleActivityIndicator(state: isLoading)
-//            }
-//        }
-//    }
 }
 
 extension SearchViewController: UITableViewDelegate {
