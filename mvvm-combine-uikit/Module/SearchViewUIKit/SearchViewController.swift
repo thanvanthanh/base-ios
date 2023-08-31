@@ -21,7 +21,6 @@ final class SearchViewController: BaseViewController {
             tableView.reloadData()
         }
     }
-    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +44,7 @@ final class SearchViewController: BaseViewController {
         
         let input = SearchViewModel.Input(
             searchTrigger: searchTrigger
-                .throttle(for: 0.5, scheduler: RunLoop.main, latest: true)
+                .throttle(for: 1, scheduler: RunLoop.main, latest: true)
                 .eraseToAnyPublisher(),
             selectUserTrigger: selectUserTrigger.eraseToAnyPublisher()
         )
@@ -53,9 +52,6 @@ final class SearchViewController: BaseViewController {
         let output = viewmodel.transform(input, disposeBag)
         output.$response
             .subscribe(repoSubscriber)
-        
-        output.$isLoading
-            .subscribe(loadingSubscriber)
     }
 }
 
@@ -66,13 +62,13 @@ extension SearchViewController {
         }
     }
     
-    private var loadingSubscriber: Binder<Bool> {
-        Binder(self) { vc, isLoading in
-            DispatchQueue.main.async {
-                self.handleActivityIndicator(state: isLoading)
-            }
-        }
-    }
+//    private var loadingSubscriber: Binder<Bool> {
+//        Binder(self) { vc, isLoading in
+//            DispatchQueue.main.async {
+//                self.handleActivityIndicator(state: isLoading)
+//            }
+//        }
+//    }
 }
 
 extension SearchViewController: UITableViewDelegate {

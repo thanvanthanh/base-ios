@@ -30,18 +30,12 @@ extension SearchViewModel: ViewModelType {
     
     func transform(_ input: Input, _ disposeBag: DisposeBag) -> Output {
         let output = Output()
-        let errorTracker = ErrorTracker()
-        let activityTracker = ActivityTracker(false)
-        
         input.searchTrigger
             .flatMap {
                 self.getSearchData
                     .search(username: $0)
-                    .trackError(errorTracker)
-                    .trackActivity(activityTracker)
-                    .catch { _ in
-                        Empty()
-                    }
+                    .trackActivity(self.activityIndicator)
+                    .trackError(self.errorIndicator)
                     .eraseToAnyPublisher()
             }
             .assign(to: \.response, on: output)
@@ -54,9 +48,9 @@ extension SearchViewModel: ViewModelType {
             }
             .store(in: disposeBag)
         
-        activityTracker
-            .assign(to: \.isLoading, on: output)
-            .store(in: disposeBag)
+//        activityTracker
+//            .assign(to: \.isLoading, on: output)
+//            .store(in: disposeBag)
         
         
         return output

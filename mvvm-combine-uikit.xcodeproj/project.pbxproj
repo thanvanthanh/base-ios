@@ -39,7 +39,6 @@
 		CB3D5BD12A9F33790090AC36 /* AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC22A9F33790090AC36 /* AFNetworking.swift */; };
 		CB3D5BD22A9F33790090AC36 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC32A9F33790090AC36 /* Configuration.swift */; };
 		CB3D5BD32A9F33790090AC36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC52A9F33790090AC36 /* BaseViewModel.swift */; };
-		CB3D5BD42A9F33790090AC36 /* BaseViewModelS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC62A9F33790090AC36 /* BaseViewModelS.swift */; };
 		CB3D5BD52A9F33790090AC36 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC82A9F33790090AC36 /* APIRouter.swift */; };
 		CB3D5BD62A9F33790090AC36 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BCA2A9F33790090AC36 /* SearchModel.swift */; };
 		CB3D5BD92A9F33820090AC36 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BD82A9F33820090AC36 /* SearchUseCase.swift */; };
@@ -59,6 +58,7 @@
 		CB3D5C062A9F8CEE0090AC36 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C052A9F8CEE0090AC36 /* DetailViewModel.swift */; };
 		CB3D5C092A9F8D5B0090AC36 /* DetailUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C082A9F8D5B0090AC36 /* DetailUseCaseType.swift */; };
 		CB3D5C0C2A9F8DD10090AC36 /* DetaiViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C0B2A9F8DD10090AC36 /* DetaiViewCoordinator.swift */; };
+		CB3D5C0F2AA041350090AC36 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C0E2AA041350090AC36 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +96,6 @@
 		CB3D5BC22A9F33790090AC36 /* AFNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFNetworking.swift; sourceTree = "<group>"; };
 		CB3D5BC32A9F33790090AC36 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CB3D5BC52A9F33790090AC36 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		CB3D5BC62A9F33790090AC36 /* BaseViewModelS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModelS.swift; sourceTree = "<group>"; };
 		CB3D5BC82A9F33790090AC36 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		CB3D5BCA2A9F33790090AC36 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		CB3D5BD82A9F33820090AC36 /* SearchUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		CB3D5C052A9F8CEE0090AC36 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CB3D5C082A9F8D5B0090AC36 /* DetailUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseType.swift; sourceTree = "<group>"; };
 		CB3D5C0B2A9F8DD10090AC36 /* DetaiViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaiViewCoordinator.swift; sourceTree = "<group>"; };
+		CB3D5C0E2AA041350090AC36 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3D5BEC2A9F34350090AC36 /* Application */,
+				CB3D5C0D2AA041290090AC36 /* Common */,
 				CB3D5B8C2A9F33690090AC36 /* Extension */,
 				CB3D5B9C2A9F33690090AC36 /* Utility */,
 				CB3D5BB72A9F33790090AC36 /* Base */,
@@ -240,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				CB3D5BB82A9F33790090AC36 /* BaseViewController.swift */,
+				CB3D5BC52A9F33790090AC36 /* BaseViewModel.swift */,
 				CB3D5BB92A9F33790090AC36 /* BaseNetwork */,
-				CB3D5BC42A9F33790090AC36 /* BaseViewModel */,
 				CB3D5BEE2A9F34A70090AC36 /* BaseCoordinator.swift */,
 			);
 			path = Base;
@@ -251,8 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				CB3D5BBA2A9F33790090AC36 /* Logger */,
-				CB3D5BBC2A9F33790090AC36 /* TargetType.swift */,
 				CB3D5BBD2A9F33790090AC36 /* APIError */,
+				CB3D5BBC2A9F33790090AC36 /* TargetType.swift */,
 				CB3D5BC02A9F33790090AC36 /* BaseAPI.swift */,
 				CB3D5BC12A9F33790090AC36 /* AFNetworking */,
 				CB3D5BC32A9F33790090AC36 /* Configuration.swift */,
@@ -283,15 +284,6 @@
 				CB3D5BC22A9F33790090AC36 /* AFNetworking.swift */,
 			);
 			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		CB3D5BC42A9F33790090AC36 /* BaseViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				CB3D5BC52A9F33790090AC36 /* BaseViewModel.swift */,
-				CB3D5BC62A9F33790090AC36 /* BaseViewModelS.swift */,
-			);
-			path = BaseViewModel;
 			sourceTree = "<group>";
 		};
 		CB3D5BC72A9F33790090AC36 /* NetworkLayer */ = {
@@ -394,6 +386,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		CB3D5C0D2AA041290090AC36 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D5C0E2AA041350090AC36 /* Alert.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +485,7 @@
 				CB3D5B7D2A9F334A0090AC36 /* ViewController.swift in Sources */,
 				CB3D5BAC2A9F33690090AC36 /* UIViewController+Extension.swift in Sources */,
 				CB3D5BA72A9F33690090AC36 /* UIViewControllerPreview.swift in Sources */,
+				CB3D5C0F2AA041350090AC36 /* Alert.swift in Sources */,
 				CB3D5BB02A9F33690090AC36 /* BindableType.swift in Sources */,
 				CB3D5BE82A9F338B0090AC36 /* SearchViewModel.swift in Sources */,
 				CB3D5BD52A9F33790090AC36 /* APIRouter.swift in Sources */,
@@ -508,7 +509,6 @@
 				CB3D5BAF2A9F33690090AC36 /* String+Extension.swift in Sources */,
 				CB3D5BB22A9F33690090AC36 /* Binder.swift in Sources */,
 				CB3D5BCB2A9F33790090AC36 /* BaseViewController.swift in Sources */,
-				CB3D5BD42A9F33790090AC36 /* BaseViewModelS.swift in Sources */,
 				CB3D5BB42A9F33690090AC36 /* NibIdentifiable.swift in Sources */,
 				CB3D5BB12A9F33690090AC36 /* DisposeBag.swift in Sources */,
 				CB3D5BE72A9F338B0090AC36 /* SearchViewController.swift in Sources */,

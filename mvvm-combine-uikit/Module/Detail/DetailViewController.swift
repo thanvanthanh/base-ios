@@ -11,7 +11,6 @@ import Combine
 final class DetailViewController: BaseViewController {
 
     @IBOutlet private  weak var nameTitle: UILabel!
-    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()

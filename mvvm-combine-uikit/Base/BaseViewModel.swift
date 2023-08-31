@@ -9,10 +9,15 @@ import Foundation
 import Combine
 
 class BaseViewModel: NSObject {
-    let error = ErrorTracker()
     
-    let isLoading = CurrentValueSubject<Bool, Never>(false)
+    // Track Error
+    let errorIndicator = ErrorIndicator()
+    lazy var errorPublisher = errorIndicator.errors.eraseToAnyPublisher()
     
+    // Track Loading
+    let activityIndicator = ActivityIndicator()
+    lazy var loadingPublisher = activityIndicator.loading.eraseToAnyPublisher()
+        
     override init() {
         super.init()
     }

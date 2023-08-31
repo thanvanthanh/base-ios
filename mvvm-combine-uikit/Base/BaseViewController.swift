@@ -7,10 +7,12 @@
 
 import UIKit
 import Lottie
+import Combine
 
 class BaseViewController: UIViewController {
     
     var viewModel: BaseViewModel
+    var disposeBag = DisposeBag()
         
     private let loadingView = UIView()
     private let animationView = LottieAnimationView(name: "animation")
@@ -32,7 +34,27 @@ class BaseViewController: UIViewController {
     
     func setupUI() {}
     
-    func bindViewModel() {}
+    func bindViewModel() {
+        viewModel.loadingPublisher
+            .sink { isLoading in
+                self.handleActivityIndicator(state: isLoading)
+            }
+            .store(in: disposeBag)
+        
+        viewModel.errorPublisher
+            .sink { error in
+                if let error = error as? APIError {
+                    Alert(message: error.desc)
+                        .action(.ok)
+                        .show(on: self)
+                } else {
+                    Alert(message: error.localizedDescription)
+                        .action(.ok)
+                        .show(on: self)
+                }
+            }
+            .store(in: disposeBag)
+    }
     
 }
 
