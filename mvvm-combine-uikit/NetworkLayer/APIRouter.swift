@@ -10,6 +10,7 @@ import Alamofire
 
 enum APIRouter {
     case search(username: String)
+    case refreshToken(token: String)
 }
 
 extension APIRouter: TargetType {
@@ -21,6 +22,8 @@ extension APIRouter: TargetType {
         switch self {
         case .search:
             return .requestPath(path: "/search/users")
+        case .refreshToken:
+            return .requestPath(path: "/auth/refresh")
         }
     }
     
@@ -28,6 +31,8 @@ extension APIRouter: TargetType {
         switch self {
         case .search:
             return .get
+        case .refreshToken:
+            return .post
         }
     }
     
@@ -35,6 +40,8 @@ extension APIRouter: TargetType {
         switch self {
         case let .search(username):
             return .requestParameters(parameters: ["q": username], encoding:JSONEncoding.default)
+        case let .refreshToken(token):
+            return .requestParameters(parameters: ["refresh_token": token], encoding: .default)
         }
     }
     
