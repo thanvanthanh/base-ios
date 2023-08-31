@@ -1,4 +1,4 @@
 # mvvm-combine-uikit
-MVVM-C (Overview Model-View-ViewModel+Coordinator)
+MVVM-C (Model-View-ViewModel+Coordinator)
 
 ViewModel with Inputs and Output
