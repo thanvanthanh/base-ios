@@ -34,7 +34,7 @@ enum Task {
 }
 
 protocol TargetType {
-    var baseUrl: BaseURLType { get }
+    var baseUrl: String { get }
     var path: RequestType { get }
     var method: HTTPMethod { get }
     var task: Task { get }

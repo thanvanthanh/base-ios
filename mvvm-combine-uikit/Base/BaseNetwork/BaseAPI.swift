@@ -12,12 +12,6 @@ import Combine
 class BaseAPI<T: TargetType> {
     typealias AnyPublisherResult<M> = AnyPublisher<M?, APIError>
     typealias FutureResult<M> = Future<M?, APIError>
-    
-    private let networking: AFNetworking
-    
-    init(networking: AFNetworking = AFNetworking(allHostsMustBeEvaluated: true)) {
-        self.networking = networking
-    }
 }
 
 extension BaseAPI {
@@ -27,14 +21,14 @@ extension BaseAPI {
         let header = Alamofire.HTTPHeaders(target.header ?? [:])
         let params = self.buildParameters(task: target.task)
         let targetPath = self.buildTarget(target: target.path)
-        let url = target.baseUrl.desc + targetPath
+        let url = target.baseUrl + targetPath
         return FutureResult<M> { promise in
-            self.networking.session.request(url,
-                                            method: method,
-                                            parameters: params.0,
-                                            encoding: URLEncoding.default,
-                                            headers: header,
-                                            requestModifier: { $0.timeoutInterval = 20 })
+            AFNetworking.shared.request(url,
+                                    method: method,
+                                    parameters: params.0,
+                                    encoding: URLEncoding.default,
+                                    headers: header,
+                                    requestModifier: { $0.timeoutInterval = 20 })
             .validate(statusCode: 200..<300)
             .responseDecodable(of:M.self) { response in
                 switch response.result {

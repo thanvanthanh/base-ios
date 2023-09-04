@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return true }
         SearchViewCoordinator.shared.start(data: window)
+        
+        AFNetworking.shared.listenForReachability()
         return true
     }
 

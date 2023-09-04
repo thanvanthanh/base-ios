@@ -14,8 +14,8 @@ enum APIRouter {
 }
 
 extension APIRouter: TargetType {
-    var baseUrl: BaseURLType {
-        return .staging
+    var baseUrl: String {
+        return Configs.share.env.baseURL
     }
     
     var path: RequestType {

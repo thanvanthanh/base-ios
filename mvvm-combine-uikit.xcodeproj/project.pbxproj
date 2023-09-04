@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1C81362AA61994002AB004 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C81352AA61994002AB004 /* Configs.swift */; };
+		CB1C81382AA619B5002AB004 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C81372AA619B5002AB004 /* Enviroment.swift */; };
 		CB3D5B792A9F334A0090AC36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5B782A9F334A0090AC36 /* AppDelegate.swift */; };
 		CB3D5B7D2A9F334A0090AC36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5B7C2A9F334A0090AC36 /* ViewController.swift */; };
 		CB3D5B802A9F334A0090AC36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3D5B7E2A9F334A0090AC36 /* Main.storyboard */; };
@@ -37,7 +39,6 @@
 		CB3D5BCF2A9F33790090AC36 /* AFError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BBF2A9F33790090AC36 /* AFError+Extension.swift */; };
 		CB3D5BD02A9F33790090AC36 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC02A9F33790090AC36 /* BaseAPI.swift */; };
 		CB3D5BD12A9F33790090AC36 /* AFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC22A9F33790090AC36 /* AFNetworking.swift */; };
-		CB3D5BD22A9F33790090AC36 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC32A9F33790090AC36 /* Configuration.swift */; };
 		CB3D5BD32A9F33790090AC36 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC52A9F33790090AC36 /* BaseViewModel.swift */; };
 		CB3D5BD52A9F33790090AC36 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BC82A9F33790090AC36 /* APIRouter.swift */; };
 		CB3D5BD62A9F33790090AC36 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5BCA2A9F33790090AC36 /* SearchModel.swift */; };
@@ -65,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB1C81352AA61994002AB004 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		CB1C81372AA619B5002AB004 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		CB3D5B752A9F334A0090AC36 /* mvvm-combine-uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-combine-uikit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3D5B782A9F334A0090AC36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3D5B7C2A9F334A0090AC36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		CB3D5BBF2A9F33790090AC36 /* AFError+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AFError+Extension.swift"; sourceTree = "<group>"; };
 		CB3D5BC02A9F33790090AC36 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		CB3D5BC22A9F33790090AC36 /* AFNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFNetworking.swift; sourceTree = "<group>"; };
-		CB3D5BC32A9F33790090AC36 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CB3D5BC52A9F33790090AC36 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		CB3D5BC82A9F33790090AC36 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		CB3D5BCA2A9F33790090AC36 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
@@ -135,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1C81342AA6197E002AB004 /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				CB1C81352AA61994002AB004 /* Configs.swift */,
+				CB1C81372AA619B5002AB004 /* Enviroment.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
 		CB3D5B6C2A9F33490090AC36 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3D5BEC2A9F34350090AC36 /* Application */,
+				CB1C81342AA6197E002AB004 /* AppConfig */,
 				CB3D5C0D2AA041290090AC36 /* Common */,
 				CB3D5B8C2A9F33690090AC36 /* Extension */,
 				CB3D5B9C2A9F33690090AC36 /* Utility */,
@@ -263,7 +275,6 @@
 				CB3D5BBD2A9F33790090AC36 /* APIError */,
 				CB3D5BBC2A9F33790090AC36 /* TargetType.swift */,
 				CB3D5BC02A9F33790090AC36 /* BaseAPI.swift */,
-				CB3D5BC32A9F33790090AC36 /* Configuration.swift */,
 			);
 			path = BaseNetwork;
 			sourceTree = "<group>";
@@ -509,12 +520,13 @@
 				CB3D5BD62A9F33790090AC36 /* SearchModel.swift in Sources */,
 				CB3D5C142AA083C20090AC36 /* RequestInterceptor.swift in Sources */,
 				CB3D5C162AA086C50090AC36 /* AuthorizeModel.swift in Sources */,
+				CB1C81362AA61994002AB004 /* Configs.swift in Sources */,
 				CB3D5BA82A9F33690090AC36 /* Publisher+Extension.swift in Sources */,
 				CB3D5BB52A9F33690090AC36 /* UICollectionView+Identifiable.swift in Sources */,
 				CB3D5BA52A9F33690090AC36 /* UIViewPreview.swift in Sources */,
 				CB3D5BD12A9F33790090AC36 /* AFNetworking.swift in Sources */,
 				CB3D5BA62A9F33690090AC36 /* Preview.swift in Sources */,
-				CB3D5BD22A9F33790090AC36 /* Configuration.swift in Sources */,
+				CB1C81382AA619B5002AB004 /* Enviroment.swift in Sources */,
 				CB3D5BD32A9F33790090AC36 /* BaseViewModel.swift in Sources */,
 				CB3D5BEF2A9F34A70090AC36 /* BaseCoordinator.swift in Sources */,
 				CB3D5BCC2A9F33790090AC36 /* AlamofireLogger.swift in Sources */,
