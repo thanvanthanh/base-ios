@@ -66,6 +66,50 @@ extension UITableView {
         insertRows(at: indexPaths, with: animation)
         endUpdates()
     }
+    
+    func tableViewNoData(content: String? = nil, icons: String) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0,
+                                        width: self.bounds.size.width,
+                                        height: self.bounds.size.height))
+        let label = UILabel()
+        label.text = content
+        label.font = .systemFont(ofSize: 16)
+        label.textColor = UIColor(hexString: "#7B7B7B")
+        label.textAlignment = .center
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        if icons.count > 0 {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: icons)
+            view.addSubview(imageView)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+                imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -45)
+            ])
+            
+            NSLayoutConstraint.activate([
+                label.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+                label.centerYAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                label.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+                label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0)
+            ])
+        }
+        
+        return view
+    }
+    
+    func setNoDataView(content: String?, icons: String) {
+        self.backgroundView = tableViewNoData(content: content, icons: icons)
+    }
+    
+    func removeNodataView() {
+        self.backgroundView = nil
+    }
 }
 
 extension UITableViewCell {

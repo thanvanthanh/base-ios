@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0FA7622AAAD33E00F3521E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FA7612AAAD33E00F3521E /* UIColor+Extension.swift */; };
 		CB1C81362AA61994002AB004 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C81352AA61994002AB004 /* Configs.swift */; };
 		CB1C81382AA619B5002AB004 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C81372AA619B5002AB004 /* Enviroment.swift */; };
 		CB3D5B792A9F334A0090AC36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5B782A9F334A0090AC36 /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB0FA7612AAAD33E00F3521E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CB1C81352AA61994002AB004 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		CB1C81372AA619B5002AB004 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		CB3D5B752A9F334A0090AC36 /* mvvm-combine-uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-combine-uikit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 				CB3D5B972A9F33690090AC36 /* UIViewController+Extension.swift */,
 				CB3D5B982A9F33690090AC36 /* UICollectionView+Extension.swift */,
 				CB3D5B992A9F33690090AC36 /* UITableView+Extension.swift */,
+				CB0FA7612AAAD33E00F3521E /* UIColor+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				CB3D5BB22A9F33690090AC36 /* Binder.swift in Sources */,
 				CB3D5BCB2A9F33790090AC36 /* BaseViewController.swift in Sources */,
 				CB3D5BB42A9F33690090AC36 /* NibIdentifiable.swift in Sources */,
+				CB0FA7622AAAD33E00F3521E /* UIColor+Extension.swift in Sources */,
 				CB3D5BB12A9F33690090AC36 /* DisposeBag.swift in Sources */,
 				CB3D5BE72A9F338B0090AC36 /* SearchViewController.swift in Sources */,
 				CB3D5BB32A9F33690090AC36 /* ClassIdentifiable.swift in Sources */,

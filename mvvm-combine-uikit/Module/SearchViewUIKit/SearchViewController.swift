@@ -10,8 +10,14 @@ import Combine
 
 final class SearchViewController: BaseViewController {
     
+    enum Section: Hashable {
+        case main
+    }
+    
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
+    
+    private var dataSource: UITableViewDiffableDataSource<Section, SearchModel>? = nil
     
     private let searchTrigger = PassthroughSubject<String, Never>()
     private let selectUserTrigger = PassthroughSubject<IndexPath, Never>()
@@ -31,12 +37,22 @@ final class SearchViewController: BaseViewController {
         super.setupUI()
         title = "Search"
         setupTableView()
+        configDataSource()
+    }
+    
+    private func configDataSource() {
+        dataSource = UITableViewDiffableDataSource<Section, SearchModel>(tableView: tableView, cellProvider: { tableView, indexPath, itemIdentifier in
+            let cell = tableView.dequeueReusableCell(cell: SearchTableViewCell.self, indexPath: indexPath)
+            cell.accessoryType = .disclosureIndicator
+            cell.config(data: itemIdentifier)
+            return cell
+        })
+        dataSource?.defaultRowAnimation = .fade
     }
     
     private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.register(cell: SearchTableViewCell.self)
+        tableView.delegate = self
     }
     
     override func bindViewModel() {
@@ -60,7 +76,16 @@ final class SearchViewController: BaseViewController {
 extension SearchViewController {
     private var repoSubscriber: Binder<ItemSearchResponse?> {
         Binder(self) { vc, repos in
-            self.data = repos
+            var snapshot = NSDiffableDataSourceSnapshot<Section, SearchModel>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(repos?.items ?? [], toSection: .main)
+            vc.dataSource?.apply(snapshot, animatingDifferences: true)
+            DispatchQueue.main.async {
+                guard let repoList = repos?.items else { return }
+                repoList.isEmpty
+                ? vc.tableView.setNoDataView(content: "No Data", icons: "")
+                : vc.tableView.removeNodataView()
+            }
         }
     }
 }
@@ -70,18 +95,6 @@ extension SearchViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         searchBar.endEditing(true)
         selectUserTrigger.send(indexPath)
-    }
-}
-
-extension SearchViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.items?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(cell: SearchTableViewCell.self, indexPath: indexPath)
-        cell.config(data: data?.items?[indexPath.row])
-        return cell
     }
 }
 

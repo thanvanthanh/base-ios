@@ -30,6 +30,10 @@ final class AlamofireLogger: EventMonitor {
     
     func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
         NSLog("⚡️⚡️⚡️⚡️ Response Receivedad: \(response.debugDescription)")
+        if let body = response.data{
+            let bodyString = NSString(data: body, encoding: String.Encoding.utf8.rawValue) ?? "Can't render body; not utf8 encoded";
+            print("ℹ️ℹ️ℹ️ Response String: \(bodyString)")
+        }
         NSLog("⚡️⚡️⚡️⚡️ Response All Headers: \(String(describing: response.response?.allHeaderFields))")
     }
 }
