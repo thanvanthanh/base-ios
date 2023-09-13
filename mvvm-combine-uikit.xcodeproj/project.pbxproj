@@ -64,6 +64,13 @@
 		CB3D5C122AA07E1C0090AC36 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C112AA07E1C0090AC36 /* Atomic.swift */; };
 		CB3D5C142AA083C20090AC36 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C132AA083C20090AC36 /* RequestInterceptor.swift */; };
 		CB3D5C162AA086C50090AC36 /* AuthorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C152AA086C50090AC36 /* AuthorizeModel.swift */; };
+		CBE064C32AB20DC700D21491 /* AppScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064C22AB20DC700D21491 /* AppScenes.swift */; };
+		CBE064C62AB20FFE00D21491 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064C52AB20FFE00D21491 /* Timer.swift */; };
+		CBE064C82AB2102900D21491 /* LeakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064C72AB2102900D21491 /* LeakDetector.swift */; };
+		CBE064CB2AB2107B00D21491 /* LeakDetectorStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064CA2AB2107B00D21491 /* LeakDetectorStatus.swift */; };
+		CBE064CD2AB2109300D21491 /* WeakSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064CC2AB2109300D21491 /* WeakSequence.swift */; };
+		CBE064CF2AB2122E00D21491 /* LeakDetector+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064CE2AB2122E00D21491 /* LeakDetector+UIViewController.swift */; };
+		CBE064D12AB2125100D21491 /* LeakDetector+NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064D02AB2125100D21491 /* LeakDetector+NSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +130,13 @@
 		CB3D5C112AA07E1C0090AC36 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		CB3D5C132AA083C20090AC36 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		CB3D5C152AA086C50090AC36 /* AuthorizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeModel.swift; sourceTree = "<group>"; };
+		CBE064C22AB20DC700D21491 /* AppScenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScenes.swift; sourceTree = "<group>"; };
+		CBE064C52AB20FFE00D21491 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		CBE064C72AB2102900D21491 /* LeakDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakDetector.swift; sourceTree = "<group>"; };
+		CBE064CA2AB2107B00D21491 /* LeakDetectorStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakDetectorStatus.swift; sourceTree = "<group>"; };
+		CBE064CC2AB2109300D21491 /* WeakSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakSequence.swift; sourceTree = "<group>"; };
+		CBE064CE2AB2122E00D21491 /* LeakDetector+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeakDetector+UIViewController.swift"; sourceTree = "<group>"; };
+		CBE064D02AB2125100D21491 /* LeakDetector+NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeakDetector+NSViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +185,7 @@
 				CB1C81342AA6197E002AB004 /* AppConfig */,
 				CB3D5C0D2AA041290090AC36 /* Common */,
 				CB3D5B8C2A9F33690090AC36 /* Extension */,
+				CBE064C42AB20FEC00D21491 /* LeakDetector */,
 				CB3D5B9C2A9F33690090AC36 /* Utility */,
 				CB3D5BB72A9F33790090AC36 /* Base */,
 				CB3D5BC72A9F33790090AC36 /* NetworkLayer */,
@@ -369,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3D5B782A9F334A0090AC36 /* AppDelegate.swift */,
+				CBE064C22AB20DC700D21491 /* AppScenes.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -423,6 +439,27 @@
 				CB3D5C112AA07E1C0090AC36 /* Atomic.swift */,
 			);
 			path = Atomic;
+			sourceTree = "<group>";
+		};
+		CBE064C42AB20FEC00D21491 /* LeakDetector */ = {
+			isa = PBXGroup;
+			children = (
+				CBE064C52AB20FFE00D21491 /* Timer.swift */,
+				CBE064C72AB2102900D21491 /* LeakDetector.swift */,
+				CBE064CE2AB2122E00D21491 /* LeakDetector+UIViewController.swift */,
+				CBE064D02AB2125100D21491 /* LeakDetector+NSViewController.swift */,
+				CBE064C92AB2106100D21491 /* LeakDetectorCore */,
+			);
+			path = LeakDetector;
+			sourceTree = "<group>";
+		};
+		CBE064C92AB2106100D21491 /* LeakDetectorCore */ = {
+			isa = PBXGroup;
+			children = (
+				CBE064CA2AB2107B00D21491 /* LeakDetectorStatus.swift */,
+				CBE064CC2AB2109300D21491 /* WeakSequence.swift */,
+			);
+			path = LeakDetectorCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,10 +557,14 @@
 				CB3D5BB02A9F33690090AC36 /* BindableType.swift in Sources */,
 				CB3D5BE82A9F338B0090AC36 /* SearchViewModel.swift in Sources */,
 				CB3D5BD52A9F33790090AC36 /* APIRouter.swift in Sources */,
+				CBE064CD2AB2109300D21491 /* WeakSequence.swift in Sources */,
 				CB3D5BD62A9F33790090AC36 /* SearchModel.swift in Sources */,
 				CB3D5C142AA083C20090AC36 /* RequestInterceptor.swift in Sources */,
 				CB3D5C162AA086C50090AC36 /* AuthorizeModel.swift in Sources */,
+				CBE064D12AB2125100D21491 /* LeakDetector+NSViewController.swift in Sources */,
+				CBE064CB2AB2107B00D21491 /* LeakDetectorStatus.swift in Sources */,
 				CB1C81362AA61994002AB004 /* Configs.swift in Sources */,
+				CBE064C82AB2102900D21491 /* LeakDetector.swift in Sources */,
 				CB3D5BA82A9F33690090AC36 /* Publisher+Extension.swift in Sources */,
 				CB3D5BB52A9F33690090AC36 /* UICollectionView+Identifiable.swift in Sources */,
 				CB3D5BA52A9F33690090AC36 /* UIViewPreview.swift in Sources */,
@@ -546,6 +587,7 @@
 				CB3D5BB42A9F33690090AC36 /* NibIdentifiable.swift in Sources */,
 				CB0FA7622AAAD33E00F3521E /* UIColor+Extension.swift in Sources */,
 				CB3D5BB12A9F33690090AC36 /* DisposeBag.swift in Sources */,
+				CBE064CF2AB2122E00D21491 /* LeakDetector+UIViewController.swift in Sources */,
 				CB3D5BE72A9F338B0090AC36 /* SearchViewController.swift in Sources */,
 				CB3D5BB32A9F33690090AC36 /* ClassIdentifiable.swift in Sources */,
 				CB3D5C122AA07E1C0090AC36 /* Atomic.swift in Sources */,
@@ -554,6 +596,8 @@
 				CB3D5BD02A9F33790090AC36 /* BaseAPI.swift in Sources */,
 				CB3D5BAB2A9F33690090AC36 /* UIApplication+Extension.swift in Sources */,
 				CB3D5BD92A9F33820090AC36 /* SearchUseCase.swift in Sources */,
+				CBE064C62AB20FFE00D21491 /* Timer.swift in Sources */,
+				CBE064C32AB20DC700D21491 /* AppScenes.swift in Sources */,
 				CB3D5BCE2A9F33790090AC36 /* APIError.swift in Sources */,
 				CB3D5BAE2A9F33690090AC36 /* UITableView+Extension.swift in Sources */,
 				CB3D5BCF2A9F33790090AC36 /* AFError+Extension.swift in Sources */,

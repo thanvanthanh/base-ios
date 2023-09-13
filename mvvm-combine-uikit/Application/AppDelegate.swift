@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    private var bag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -19,7 +22,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SearchViewCoordinator.shared.start(data: window)
         
         AFNetworking.shared.listenForReachability()
+        
+        // Leak Detector
+        LeakDetector.instance.isEnabled = false
         return true
+    }
+    
+    private func configLeakDetector() {
+        LeakDetector.instance.isEnabled = false
+        
+        LeakDetector.instance.status
+            .sink(
+                receiveValue: { status in
+                    print("LeakDetectorCombine \(status)")
+                }
+            )
+            .store(in: bag)
+        
+        LeakDetector.instance.isLeaked
+            .sink { message in
+                if let message = message {
+                    print("LEAK \(message)")
+                }
+            }
+            .store(in: bag)
+        
     }
 
 }
