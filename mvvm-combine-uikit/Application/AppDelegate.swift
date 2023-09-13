@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AFNetworking.shared.listenForReachability()
         
         // Leak Detector
-        LeakDetector.instance.isEnabled = false
+        configLeakDetector()
         return true
     }
     
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LeakDetector.instance.status
             .sink(
                 receiveValue: { status in
-                    print("LeakDetectorCombine \(status)")
+                    print("LeakDetector \(status)")
                 }
             )
             .store(in: bag)
