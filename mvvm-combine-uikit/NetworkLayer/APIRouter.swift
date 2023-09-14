@@ -39,9 +39,9 @@ extension APIRouter: TargetType {
     var task: Task {
         switch self {
         case let .search(username):
-            return .requestParameters(parameters: ["q": username], encoding:JSONEncoding.default)
+            return .requestParameters(parameters: ["q": username], encoding: URLEncoding.default)
         case let .refreshToken(token):
-            return .requestParameters(parameters: ["refresh_token": token], encoding: .default)
+            return .requestParameters(parameters: ["refresh_token": token], encoding: URLEncoding.default)
         }
     }
     

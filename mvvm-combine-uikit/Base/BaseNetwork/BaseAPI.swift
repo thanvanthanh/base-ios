@@ -24,11 +24,11 @@ extension BaseAPI {
         let url = target.baseUrl + targetPath
         return FutureResult<M> { promise in
             AFNetworking.shared.request(url,
-                                    method: method,
-                                    parameters: params.0,
-                                    encoding: URLEncoding.default,
-                                    headers: header,
-                                    requestModifier: { $0.timeoutInterval = 20 })
+                                        method: method,
+                                        parameters: params.0,
+                                        encoding: params.1,
+                                        headers: header,
+                                        requestModifier: { $0.timeoutInterval = 20 })
             .validate(statusCode: 200..<300)
             .responseDecodable(of:M.self) { response in
                 switch response.result {

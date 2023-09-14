@@ -30,7 +30,7 @@ enum Task {
     case requestPlain
     
     /// A requests body set with encoded parameters.
-    case requestParameters(parameters: [String: Any], encoding: JSONEncoding)
+    case requestParameters(parameters: [String: Any], encoding: URLEncoding)
 }
 
 protocol TargetType {
