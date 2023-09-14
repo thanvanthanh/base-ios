@@ -64,7 +64,6 @@
 		CB3D5C122AA07E1C0090AC36 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C112AA07E1C0090AC36 /* Atomic.swift */; };
 		CB3D5C142AA083C20090AC36 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C132AA083C20090AC36 /* RequestInterceptor.swift */; };
 		CB3D5C162AA086C50090AC36 /* AuthorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D5C152AA086C50090AC36 /* AuthorizeModel.swift */; };
-		CBE064C32AB20DC700D21491 /* AppScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064C22AB20DC700D21491 /* AppScenes.swift */; };
 		CBE064C62AB20FFE00D21491 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064C52AB20FFE00D21491 /* Timer.swift */; };
 		CBE064C82AB2102900D21491 /* LeakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064C72AB2102900D21491 /* LeakDetector.swift */; };
 		CBE064CB2AB2107B00D21491 /* LeakDetectorStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE064CA2AB2107B00D21491 /* LeakDetectorStatus.swift */; };
@@ -130,7 +129,6 @@
 		CB3D5C112AA07E1C0090AC36 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		CB3D5C132AA083C20090AC36 /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		CB3D5C152AA086C50090AC36 /* AuthorizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeModel.swift; sourceTree = "<group>"; };
-		CBE064C22AB20DC700D21491 /* AppScenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScenes.swift; sourceTree = "<group>"; };
 		CBE064C52AB20FFE00D21491 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		CBE064C72AB2102900D21491 /* LeakDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakDetector.swift; sourceTree = "<group>"; };
 		CBE064CA2AB2107B00D21491 /* LeakDetectorStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakDetectorStatus.swift; sourceTree = "<group>"; };
@@ -384,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				CB3D5B782A9F334A0090AC36 /* AppDelegate.swift */,
-				CBE064C22AB20DC700D21491 /* AppScenes.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -597,7 +594,6 @@
 				CB3D5BAB2A9F33690090AC36 /* UIApplication+Extension.swift in Sources */,
 				CB3D5BD92A9F33820090AC36 /* SearchUseCase.swift in Sources */,
 				CBE064C62AB20FFE00D21491 /* Timer.swift in Sources */,
-				CBE064C32AB20DC700D21491 /* AppScenes.swift in Sources */,
 				CB3D5BCE2A9F33790090AC36 /* APIError.swift in Sources */,
 				CB3D5BAE2A9F33690090AC36 /* UITableView+Extension.swift in Sources */,
 				CB3D5BCF2A9F33790090AC36 /* AFError+Extension.swift in Sources */,
