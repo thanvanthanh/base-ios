@@ -1,0 +1,74 @@
+
+############
+# Targets
+############
+
+targets:
+
+  # -----------
+  # Base-ios_iOS
+  # -----------
+
+  Base-ios_iOS:
+    type: application
+    platform: iOS
+
+    # sources
+    sources:
+      - path: Sources
+        excludes:
+          - "**/*.app"
+    # Config Files
+    configFiles:
+      Debug: config/iOS/xcconfig/Debug.xcconfig
+      Release: config/iOS/xcconfig/Release.xcconfig
+      Adhoc: config/iOS/xcconfig/Adhoc.xcconfig
+      Beta: config/iOS/xcconfig/Beta.xcconfig
+
+    # dependencies
+    dependencies:
+      - target: Base-ios_iOS
+
+    # settings
+    settings:
+      SWIFT_VERSION: "5.0"
+      ASSETCATALOG_COMPILER_APPICON_NAME: $(AS_APP_ICON)
+      CODE_SIGN_STYLE: "Manual"
+      UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+      VALIDATE_WORKSPACE: YES
+
+    # scheme
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: Base-ios_Tests_iOS
+          parallelizable: true
+          randomExecutionOrder: true
+
+
+    # scripts
+    #postCompileScripts:
+
+      # swiftlint
+      #- script: mint run swiftlint swiftlint --config .swiftlint.yml
+       # name: ⚠️ Swiftlint
+
+  # -----------
+  # Base-ios_Tests_iOS
+  # -----------
+
+  Base-ios_Tests_iOS:
+    platform: iOS
+    type: bundle.unit-test
+    sources:
+      - Tests/Base-iosTests iOS
+
+    # dependencies
+    dependencies:
+      - target: Base-ios_iOS
+
+    # scripts
+    #postCompileScripts:
+      # swiftlint
+      #- script: mint run swiftlint swiftlint --config .swiftlint.yml
+       # name: ⚠️ Swiftlint

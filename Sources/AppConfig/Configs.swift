@@ -13,7 +13,10 @@ final class Configs {
     private init() {}
     
     var env: Enviroment {
-        // TODO: check Enpoin
-        return.staging
+        #if ENDPOINT_DEBUG
+        return .staging
+        #else
+        return .production
+        #endif
     }
 }

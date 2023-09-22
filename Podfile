@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '13.0'
 inhibit_all_warnings!
 
-target 'mvvm-combine-uikit' do
+target 'Base-ios' do
   use_frameworks!
 
  # Networking
@@ -14,4 +14,5 @@ target 'mvvm-combine-uikit' do
  # UI
  pod 'SDWebImage'
 
+ pod 'SwiftGen'
 end
