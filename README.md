@@ -8,10 +8,32 @@ Welcome to Base-ios which is doing whatever!
 First, you will need a few tools to start working on Base-ios:
 
 - `Xcode`: From the app store or wherever
-- [Bundler](http://bundler.io): `gem install bundler`
-- [Mint](https://github.com/yonaskolb/mint): `brew install mint`
+- Ruby install: 
+    - Check ruby version:
+      ```
+      rbenv install -l
+      ```
+    - Install latest ruby:
+      ```
+      rbenv install 2.7.2 && rbenv rehash
+      ```
+    - As needed, set ruby version using global, local, shell options:
+      ```
+      rbenv global 2.7.2
+      ```
+- [Bundler](http://bundler.io):
+```
+ gem install bundler
+  ```
+- [Mint](https://github.com/yonaskolb/mint):
+  ```
+  brew install mint
+  ```
 
 Then run `make` to have a valid project ready to be used.
+```
+make
+```
 
 ### Makefile
 
