@@ -1,6 +1,6 @@
 ENV["TARGET"] = "iOS"
 ENV["SCHEME"] = "Base-ios"
-ENV["TEAM_ID"] = "FXN48TGVNE"
+ENV["TEAM_ID"] = "FX4ADKCC2J"
 ENV["CERTIFICATES_BRANCH"] = "base-is"
 
 ENV["XCWORKSPACE"] = "./Base-ios.xcworkspace"

@@ -61,7 +61,6 @@ targets:
       environmentVariables:
         ENABLE_SIGNPOST: YES
     #postCompileScripts:
-
       # swiftlint
-      #- script: mint run swiftlint swiftlint --config .swiftlint.yml
-       # name: ⚠️ Swiftlint
+      #- name: ⚠️ Swiftlint
+       # script: mint run swiftlint swiftlint --config .swiftlint.yml
