@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.6.4)
-  - lottie-ios (4.0.0)
-  - SDWebImage (5.14.2):
-    - SDWebImage/Core (= 5.14.2)
-  - SDWebImage/Core (5.14.2)
-  - SwiftGen (6.6.2)
+  - Alamofire (5.9.1)
+  - lottie-ios (4.5.0)
+  - SDWebImage (5.19.4):
+    - SDWebImage/Core (= 5.19.4)
+  - SDWebImage/Core (5.19.4)
+  - SwiftGen (6.6.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -20,11 +20,11 @@ SPEC REPOS:
     - SwiftGen
 
 SPEC CHECKSUMS:
-  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  lottie-ios: 0b5919ae7673fd7a1c36122b7cb6a9050e9c9f58
-  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
-  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  lottie-ios: a881093fab623c467d3bce374367755c272bdd59
+  SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
+  SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
 
 PODFILE CHECKSUM: b1b5bc9b190857b7eafa0e7a42ed30b5d1ccff1b
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.15.2

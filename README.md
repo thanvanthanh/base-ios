@@ -18,14 +18,14 @@ First, you will need a few tools to start working on Base-ios:
   ```
 - Install latest ruby:
   ```
-  rbenv install 2.7.2 && rbenv rehash
+  rbenv install 3.3.4 && rbenv rehash
   ```
 - As needed, set ruby version using global, local, shell options:
   ```
-  rbenv global 2.7.2
+  rbenv global 3.3.4
   ```
 ## [Bundler](http://bundler.io):
-  <img src="http://bundler.io/images/header_transparent_bg.png" width=200>
+  <img src="http://bundler.io/images/header_transparent_bg.png" width=100>
 
 ```
  gem install bundler
@@ -35,7 +35,9 @@ First, you will need a few tools to start working on Base-ios:
   brew install mint
   ```
 
-Then run `make` to have a valid project ready to be used.
+## => Then run `make` to have a valid project ready to be used.
+<img src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png" width=100>
+
 ```
 make
 ```
